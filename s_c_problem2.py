@@ -23,24 +23,34 @@ add the key values to a list via k
 return list
 '''
 
-def frequent_words(string):
+def frequent_words(string, k):
+    ''' Code complexity is intense'''
     word_dict = {}
     some_list = []
     return_list = []
-    words_list = [line.strip() for line in string]
+    # word_list = [line.strip() for line in string]
+    # word_list = string.strip()
+    # Creating a list of the words in the string
+    word_list = string.split()
+   
     if word_list is not None:
+        # if the list has values, add the words to a dictionary and keep track of the 
+        # Number of times a word appears
         for word in word_list:
             if word not in word_dict:
-            word_dict[word] = 1
-        else:
-            word_dict[word] += 1
+                word_dict[word] = 1
+            else:
+                word_dict[word] += 1
+    # Sorts the dictionary by by values in descending order            
     sorted_dict = sorted(word_dict.items(), key=lambda item: item[1], reverse = True)
 
     for object in sorted_dict:
         some_list.append(object)
-    for i in rang(0...k):
+    for i in range(0,k):
         return_list.append(some_list[i])
     
-return return_list
+    return return_list
 
-print(frequent_words("I have not seen them in a while. I have not seen them for a mile. I have not seen them over there. I have not seen them anywhere."))
+print(frequent_words("I have not seen them in a while. I have not seen them for a mile. I have not seen them over there. I have not seen them anywhere.", 6))
+print(frequent_words("I have not seen them in a while. I have not seen them for a mile. I have not seen them over there. I have not seen them anywhere.", 8))
+print(frequent_words("Running away. away. away. away", 1))
