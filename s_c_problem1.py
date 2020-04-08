@@ -32,7 +32,7 @@ def find_dup(array):
     just check that the number was in the array
     Should be (as is now fixed), that it checks if it in the dupe array
     '''
-    
+
     # This is a brute force method with time complexity of 0(n^2)
     dupe_array = []
     for number in array:
@@ -42,8 +42,6 @@ def find_dup(array):
             dupe_array.append(number)
     #Returning false if no dup is found
     return False
-
-
 
 print(find_dup(list1))
 print(find_dup(list2))
